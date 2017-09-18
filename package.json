@@ -1,0 +1,72 @@
+{
+  	"name": "CompanyOfCars",
+  	"main": "index.html",
+  	"version": "2.0.0",
+  	"author": "Derek Wang",
+  	"cfUrl": "http://localhost:9000",
+  	"description": "Company of Cars Desktop App",
+  	"chatWindow": {
+	  	"title": "Company of Cars",
+	    "width": 1250,
+	    "min_width": 1250,
+	    "height": 750,
+	    "min_height": 750,
+	    "resizable": true,
+	    "icon": "img/application_logo.png",
+	    "focus": true,
+	    "show": false,
+	    "frame": true,
+	    "show_in_taskbar": true
+	},
+	"window": {
+		"title": "Company of Cars",
+	    "width": 375,
+	    "min-height": 200,
+	    "resizable": false,
+	    "position": "center",
+	    "transparent": true,
+	    "always-on-top": true,
+	    "frame": false,
+	    "icon": "img/application_logo.png"
+	},
+	"build": {
+	    "nwVersion": "0.25.1",
+	    "packed": true,
+	    "targets": [
+	      "zip",
+	      "nsis7z"
+	    ],
+	    "strippedProperties": [
+	      "build"
+	    ],
+	    "outputPattern": "${NAME} ${VERSION} ${PLATFORM} ${ARCH}",
+	    "win": {
+	      "productName": "Company of Cars",
+	      "companyName": "Datton",
+	      "copyright": "Datton Copyright",
+	      "icon": "./assets/win/favicon.ico"
+	    },
+	    "mac": {
+	      "displayName": "Company of Cars",
+	      "copyright": "Datton Copyright",
+	      "icon": "./assets/osx/cf.icns"
+	    }
+	},
+    "nsis": {
+      "installDirectory": "$PROGRAMFILES\\${_COMPANYNAME}\\${_APPNAME}",
+      "diffUpdaters": true
+    },	
+    "scripts": {
+        "dist": "build --tasks mac-x64 --mirror https://dl.nwjs.io/ ."
+    },
+    "dependencies": {
+	    "moment": "^2.9.0",
+	    "winreg": "^0.0.12",
+	    "applescript": "^1.0.0",
+	    "semver": "^4.3.6"
+	 },
+    "devDependencies": {
+	    "nwjs-builder-phoenix": "^1.14.5",
+	    "typescript": "^2.2.1"
+	}
+}

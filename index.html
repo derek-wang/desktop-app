@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+
+    <script type="application/javascript" src="js/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<div class="splash-screen">
+    <span id="version"></span>  
+</div>
+
+<script type="text/javascript">
+    (function () {
+        var gui = require('nw.gui');
+        var desktop = require("./modules/ChatterfoxDesktop").fromNwGui(gui);
+
+        var manifest = desktop.manifest;
+        var cfWindow = null;
+
+        $('#version').html(manifest.version);
+
+        function createDesktopCardInterface() {
+            if (cfWindow) {
+                return;
+            }
+
+            function setupChatInterface() {
+                cfWindow.height = screen.availHeight;
+                cfWindow.width = screen.availWidth;
+                cfWindow.moveTo(screen.availLeft, screen.availTop);
+                cfWindow.show();
+                cfWindow.focus();
+
+                nw.Window.get().close(true);
+            }
+
+            cfWindow = nw.Window.open('http://localhost:9000/chat', manifest.chatWindow, function(new_win) {
+                cfWindow = new_win;
+                setTimeout(setupChatInterface, 2500);
+            });
+        }
+        createDesktopCardInterface();
+
+        
+    })();
+</script>
+</body>
+</html>

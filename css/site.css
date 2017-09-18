@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+
+    text-align: center;
+    background-color: transparent;
+
+    cursor: default;
+    -webkit-user-select: none;
+    user-select: none;
+
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+#environments {
+    margin: 15px;
+}
+
+hr {
+    height: 0;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.alert {
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.alert-danger hr {
+    border-top-color: #e4b9c0;
+}
+
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-warning hr {
+    border-top-color: #f7e1b5;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 5px auto 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #408996;
+    border-radius: 4px;
+    color: #fff;
+    background: #246B96 none;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.btn:hover,
+.btn:focus,
+.btn.focus {
+    text-decoration: none;
+}
+
+.btn:active,
+.btn.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.btn.btn-block {
+    display: block;
+}
+
+.footer {
+    position: relative;
+    bottom: -10px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.vertical-scroll {
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.splash-screen {
+    display: block;
+    background: #FFF url('../img/application_splash_logo.png') no-repeat center top;
+    margin: 10px;
+    text-align: center;
+
+    width: 333px;
+    min-height: 150px;
+
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+
+    -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.7);
+}
+
+#version {
+    display: block;
+    text-align: right;
+    margin-top: 150px;
+    margin-bottom: 5px;
+    padding-right: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4D4D4E;
+}

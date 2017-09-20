@@ -2,6 +2,7 @@
   	"name": "CompanyOfCars",
   	"main": "index.html",
   	"version": "2.0.0",
+  	"node-remote": "http://localhost",
   	"author": "Derek Wang",
   	"cfUrl": "http://localhost:9000",
   	"description": "Company of Cars Desktop App",
@@ -57,13 +58,14 @@
       "diffUpdaters": true
     },	
     "scripts": {
-        "dist": "build --tasks mac-x64 --mirror https://dl.nwjs.io/ ."
+        "dist": "build --tasks win-x86,win-x64,mac-x64 --mirror https://dl.nwjs.io/ ."
     },
     "dependencies": {
 	    "moment": "^2.9.0",
 	    "winreg": "^0.0.12",
 	    "applescript": "^1.0.0",
-	    "semver": "^4.3.6"
+	    "semver": "^4.3.6",
+	    "nw-notify": "^0.1.1"
 	 },
     "devDependencies": {
 	    "nwjs-builder-phoenix": "^1.14.5",

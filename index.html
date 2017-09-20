@@ -41,6 +41,7 @@
 
             cfWindow = nw.Window.open('http://localhost:9000/chat', manifest.chatWindow, function(new_win) {
                 cfWindow = new_win;
+                nw.Window.get(new_win.window).showDevTools();
                 setTimeout(setupChatInterface, 2500);
             });
         }
